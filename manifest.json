@@ -1,0 +1,31 @@
+{
+    "name": "jandi",
+    "description": "Making Landi English less Chinese.",
+    "version": "0.0.01",
+    "permissions": [
+        "activeTab",
+        "declarativeContent",
+        "storage"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "page_action": {
+        "default_popup": "./popup/popup.html",
+        "default_icon": {
+            "16": "./icons/megaman.png",
+            "32": "./icons/megaman.png",
+            "48": "./icons/megaman.png",
+            "128": "./icons/megaman.png"
+        }
+    },
+    "icons": {
+        "16": "./icons/megaman.png",
+        "32": "./icons/megaman.png",
+        "48": "./icons/megaman.png",
+        "128": "./icons/megaman.png"
+    },
+    "options_page": "./options/options.html",
+    "manifest_version": 2
+}

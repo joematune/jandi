@@ -1,0 +1,46 @@
+body {
+    width: 130px;
+    color: darkblue;
+    background-color: #fafafa;
+    transition: all 0.4s ease-out;
+}
+body:hover {
+    color: aliceblue;
+    background-color: #cccccc;
+}
+button.action {
+    width: 130px;
+    height: 20px;
+    background-color: darkblue;
+    color: white;
+    border: none;
+    border-radius: 2px;
+    font-style: italic;
+    margin: 6px 0;
+}
+button.action:hover {
+    cursor: pointer;
+}
+button:focus {
+    outline: none;
+}
+#settings {
+    display: inline-block;
+    width: 22px;
+    border-radius: 50%;
+    background-color: #cccccc;
+    margin-left: 36px;
+}
+h1.logo {
+    display: inline-block;
+    margin: 6px;
+}
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+    color: inherit;
+    text-decoration: inherit;
+    font-weight: inherit;
+}
