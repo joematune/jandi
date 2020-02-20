@@ -5,7 +5,11 @@
     "permissions": [
         "activeTab",
         "declarativeContent",
-        "storage"
+        "storage",
+        "unlimitedStorage"
+    ],
+    "web_accessible_resources": [
+        "jandi.css"
     ],
     "background": {
         "scripts": ["background.js"],
