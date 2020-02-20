@@ -14,7 +14,8 @@ changeColor.onclick = function (element) {
         let color = element.target.value;
         chrome.tabs.executeScript(
             tabs[0].id,
-            { code: 'document.body.style.backgroundColor = "' + color + '";console.log("Changed bg color to grey");' });
+            { code: 'document.body.style.backgroundColor = "' + color + '";console.log("Changed bg color to grey");' }
+        );
     });
 };
 
@@ -23,7 +24,7 @@ logStudent.onclick = function (element) {
     chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
         chrome.tabs.executeScript(
             tabs[0].id,
-            {  file: '/popup/addStudentName.js' }
+            {  file: '/popup/addComments.js' }
         )
     });
 };
