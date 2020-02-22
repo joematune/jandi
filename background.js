@@ -1,30 +1,9 @@
 'use strict';
 
 let exampleStudents = {
-    "112112": {
-        id: "112112",
-        name: "Chingching",
-        gender: "boy"
-    },
-    "424242": {
-        id: "424242",
-        name: "jimmy",
-        gender: "boy"
-    },
-    "848484": {
-        id: "848484",
-        name: "johnny",
-        gender: "boy"
-    },
-    "911911": {
-        id: "911911",
-        name: "jamie",
-        gender: "girl"
-    },
     "2061728": {
-        id: "2061728",
-        name: "Tuantuan",
-        gender: "boy"
+        sId: "2061728",
+        sName: "Tuantuan"
     }
 }
 
