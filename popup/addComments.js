@@ -46,6 +46,7 @@ if (document.querySelector('.memo-div')) {
     stu.forEach((pageStudent, index) => {
         findStudentInStorage(index);
     });
+    // Look for students; if missing, add buttons to pick gender
     function findStudentInStorage(stuNumber) {
         // Add student to chrome.storage.sync
         chrome.storage.sync.get((data) => {
@@ -58,13 +59,12 @@ if (document.querySelector('.memo-div')) {
             }
         });
     }
-
-
-
     // Get focusableItemsArray
     function getFocusableItems() {
         return [...document.querySelectorAll('textarea.textarea, textarea.per-textarea, button.jandi')]
     }
+    // Instantiate focusable items
+    let focusableArray = getFocusableItems();
     // Focus items with Enter event listeners
     function focusOnEnter() {
         let focusable = getFocusableItems();
@@ -73,20 +73,15 @@ if (document.querySelector('.memo-div')) {
             item.addEventListener('keyup', function (e) {
                 if (e.keyCode === 13 && !e.shiftKey) {
                     let nextItem;
-                    focusable = [...document.querySelectorAll('textarea.textarea, textarea.per-textarea, button.jandi')];
                     nextItem = focusable[(idx + 1) % focusable.length];
                     nextItem.focus();
                 }
             });
         });
-        return focusable;
     }
-    // Instantiate focusable items
-    let focusableArray = getFocusableItems();
+    focusOnEnter();
     // Focus on initial textarea
     focusableArray[0].focus();
-
-
 
     // Create gender picker button
     function createButton(gender, stuNumber) {
@@ -101,7 +96,7 @@ if (document.querySelector('.memo-div')) {
             stu[stuNumber].gender = e.target.value;
             // Add student to chrome.storage.sync.set( )
             chrome.storage.sync.get((data) => {
-                // Check if student has exists (may just be missing gender)
+                // Check if student exists (may just be missing gender)
                 if (data.students.hasOwnProperty(stu[stuNumber].sId)) {
                     // Add gender to student
                     data.students[stu[stuNumber].sId].gender = stu[stuNumber].gender;
@@ -116,13 +111,35 @@ if (document.querySelector('.memo-div')) {
                     });
                 }
             });
+            // DESTROY buttons, focus on next text area, recalculate focusableArray;
+
+            // DESTROY buttons, focus on next text area, recalculate focusableArray;
+
+
+            // let nextFocusItem = [...document.querySelectorAll(`textarea.per-textarea`)][stuNumber];
+            // console.log(nextFocusItem);
+            // nextFocusItem.focus();
+
+            // destroyButtons(stuNumber);
+            
+            // DESTROY buttons, focus on next text area, recalculate focusableArray;
+            
+            // DESTROY buttons, focus on next text area, recalculate focusableArray;
+
         })
         return pickGender;
     }
+    // Remove buttons with specified student number, recalc focusableArray
     function destroyButtons(stuNumber) {
         let genderButtons = [...document.querySelectorAll(`button.student${stuNumber}`)];
         genderButtons.forEach(btn => btn.parentNode.removeChild(btn));
-        focusableArray = focusOnEnter();
+    }
+    // Make buttons light grey - appearance of inoperable
+    function flattenButtons(stuNumber) {
+        let genderButtons = [...document.querySelectorAll(`button.student${stuNumber}`)];
+        genderButtons.forEach(btn => {
+            btn.classList.add('greyedOut');
+        });
     }
     // Insert buttons next to Save & Submit buttons
     function insertButtons(stuNumber) {
@@ -153,7 +170,6 @@ if (document.querySelector('.memo-div')) {
         }
     }
     insertNames();
-    focusableArray = focusOnEnter();
 } else {
     console.log(`Not on memo page :(`);
 }
