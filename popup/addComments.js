@@ -51,7 +51,7 @@ if (document.querySelector('.memo-div')) {
         // Add student to chrome.storage.sync
         chrome.storage.sync.get((data) => {
             if (data.students.hasOwnProperty(stu[stuNumber].sId) && data.students[stu[stuNumber].sId].gender) {
-                // Found Student in 
+                // Found Student in
                 console.log(`Found ${stu[stuNumber].sName}. Is a ${data.students[stu[stuNumber].sId].gender}`);
             } else {
                 // Didn't find student. Add button to pick gender
@@ -66,20 +66,32 @@ if (document.querySelector('.memo-div')) {
     // Instantiate focusable items
     let focusableArray = getFocusableItems();
     // Focus items with Enter event listeners
-    function focusOnEnter() {
-        let focusable = getFocusableItems();
-        focusable.forEach((item, idx) => {
+    function focusOnEnter(focusableArray) {
+        // let focusable = getFocusableItems();
+        focusableArray.forEach((item, idx) => {
             item.setAttribute('id', idx);
-            item.addEventListener('keyup', function (e) {
-                if (e.keyCode === 13 && !e.shiftKey) {
-                    let nextItem;
-                    nextItem = focusable[(idx + 1) % focusable.length];
-                    nextItem.focus();
-                }
-            });
+            if ([...item.classList].includes('gender')) {
+                item.addEventListener('keyup', function handleReturnKey(e) {
+                    if (e.keyCode === 13 && !e.shiftKey) {
+                        let stuNumber = idx < 4 ? 0 : 1;
+                        destroyButtons(stuNumber);
+                        let nextItem;
+                        nextItem = focusableArray[(idx + 1) % focusableArray.length];
+                        nextItem.focus();
+                    }
+                });
+            } else {
+                item.addEventListener('keyup', function handleReturnKey(e) {
+                    if (e.keyCode === 13 && !e.shiftKey) {
+                        let nextItem;
+                        nextItem = focusableArray[(idx + 1) % focusableArray.length];
+                        nextItem.focus();
+                    }
+                });
+            }
         });
     }
-    focusOnEnter();
+    focusOnEnter(getFocusableItems());
     // Focus on initial textarea
     focusableArray[0].focus();
 
@@ -111,21 +123,6 @@ if (document.querySelector('.memo-div')) {
                     });
                 }
             });
-            // DESTROY buttons, focus on next text area, recalculate focusableArray;
-
-            // DESTROY buttons, focus on next text area, recalculate focusableArray;
-
-
-            // let nextFocusItem = [...document.querySelectorAll(`textarea.per-textarea`)][stuNumber];
-            // console.log(nextFocusItem);
-            // nextFocusItem.focus();
-
-            // destroyButtons(stuNumber);
-            
-            // DESTROY buttons, focus on next text area, recalculate focusableArray;
-            
-            // DESTROY buttons, focus on next text area, recalculate focusableArray;
-
         })
         return pickGender;
     }
@@ -133,6 +130,9 @@ if (document.querySelector('.memo-div')) {
     function destroyButtons(stuNumber) {
         let genderButtons = [...document.querySelectorAll(`button.student${stuNumber}`)];
         genderButtons.forEach(btn => btn.parentNode.removeChild(btn));
+        // Ignores normal focus and directly focus next per-textarea
+        let studentPerTextAreas = [...document.querySelectorAll('textarea.per-textarea')];
+        studentPerTextAreas[stuNumber].focus();
     }
     // Make buttons light grey - appearance of inoperable
     function flattenButtons(stuNumber) {
@@ -145,7 +145,7 @@ if (document.querySelector('.memo-div')) {
     function insertButtons(stuNumber) {
         // Check if gender buttons exist for stuNumber student
         if (document.querySelector(`.student${stuNumber}`)) return;
-        
+
         let genderWrap = document.createElement('div');
         genderWrap.setAttribute('class', `btn_wrap student${stuNumber}`);
         genderWrap.style.width = '400px';
@@ -153,7 +153,7 @@ if (document.querySelector('.memo-div')) {
         textareaTextarea[stuNumber].parentNode.appendChild(genderWrap);
         genderWrap.appendChild(createButton('boy', stuNumber));
         genderWrap.appendChild(createButton('girl', stuNumber));
-        focusableArray = focusOnEnter();
+        focusableArray = focusOnEnter(getFocusableItems());
     }
     // Duplicate & insert Areas to Focus on textarea CURRENTLY UNUSED
     function duplicateAreasToFocus() {
