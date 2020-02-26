@@ -1,4 +1,14 @@
 if (document.querySelector('.memo-div')) {
+    let comments = {
+        student1: {
+            areasToFocusOn: '',
+            overallPerformance: ''
+        },
+        student2: {
+            areasToFocusOn: '',
+            overallPerformance: ''
+        }
+    };
     // Create and add <link rel="stylesheet"...>
     function addJandiStyle() {
         // Checks if gender button exists
@@ -92,8 +102,21 @@ if (document.querySelector('.memo-div')) {
         });
     }
     focusOnEnter(getFocusableItems());
-    // Focus on initial textarea
-    focusableArray[0].focus();
+    function getAreasToFocus() {
+        // Insert start "Be sure to focus on..."
+        focusableArray[0].value = 'Be sure to focus on ';
+        // Focus on initial textarea
+        focusableArray[0].focus();
+        // Store final value on 'Return' keydown
+        focusableArray[0].addEventListener('keydown', (e) => {
+            if (e.keyCode == 13) {
+                let focusText = document.querySelector('textarea.textarea').value;
+                comments.student1.areasToFocusOn = focusText;
+                comments.student2.areasToFocusOn = focusText;
+            }
+        })
+    }
+    getAreasToFocus();
 
     // Create gender picker button
     function createButton(gender, stuNumber) {
