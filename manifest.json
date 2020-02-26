@@ -24,6 +24,15 @@
             "128": "./icons/megaman.png"
         }
     },
+    "commands": {
+        "addComments": {
+            "suggested_key": {
+                "default": "Ctrl+J",
+                "mac": "Command+J"
+            },
+            "description": "Find students and insert comments."
+        }
+    },
     "icons": {
         "16": "./icons/megaman.png",
         "32": "./icons/megaman.png",
