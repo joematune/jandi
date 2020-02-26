@@ -178,11 +178,6 @@ if (document.querySelector('.memo-div')) {
         genderWrap.appendChild(createButton('girl', stuNumber));
         focusableArray = focusOnEnter(getFocusableItems());
     }
-    // Duplicate & insert Areas to Focus on textarea CURRENTLY UNUSED
-    function duplicateAreasToFocus() {
-        let areasToFocus = [...document.querySelectorAll('textarea.textarea')];
-        areasToFocus[1] = areasToFocus[0];
-    }
     // Insert student names into 'Overall Performance' textarea
     function insertNames() {
         let sIdArray;
