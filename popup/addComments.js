@@ -102,9 +102,16 @@ if (document.querySelector('.memo-div')) {
         });
     }
     focusOnEnter(getFocusableItems());
-    function getAreasToFocus() {
-        // Insert start "Be sure to focus on..."
-        focusableArray[0].value = 'Be sure to focus on ';
+    function getFirstTextarea() {
+        // Insert start "1. Be sure to focus on..."
+        let focusText;
+
+        if (focusableArray[0].value == '') {
+            focusText = '1. Be sure to focus on '
+        } else {
+            focusText = focusableArray[0].value;
+        };
+        focusableArray[0].value = focusText;
         // Focus on initial textarea
         focusableArray[0].focus();
         // Store final value on 'Return' keydown
@@ -116,8 +123,17 @@ if (document.querySelector('.memo-div')) {
             }
         })
     }
-    getAreasToFocus();
-
+    getFirstTextarea();
+    function firstSaveButton() {
+        let saveButton = document.querySelector('.submit-btn');
+        saveButton.addEventListener('keyup', (e) => {
+            if (e.keyCode == 13) {
+                let secondTextarea = [...document.querySelectorAll('textarea.textarea')][1]
+                secondTextarea.value = comments.student2.areasToFocusOn;
+            }
+        });
+    }
+    firstSaveButton();
     // Create gender picker button
     function createButton(gender, stuNumber) {
         let pickGender = document.createElement('button');
