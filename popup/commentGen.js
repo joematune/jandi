@@ -41,10 +41,9 @@ function commentGen(student) {
     c += `I am never surprised by POS effort. `;
     c += `${sName} listens when PRO is asked questions. `;
     c += `POS skills are ${random(first)}. `
-    c = c.replace(/\. PRO/g, `. ${cap(PRO)}`);
-    c = c.replace(/\. POS/g, `. ${cap(POS)}`);
     c = c.replace(/PRO/g, PRO);
     c = c.replace(/POS/g, POS);
+    c = c.replace(/\. \w/g, s => s.toUpperCase());
     return console.log(c);
 }
 function cap(s) {
