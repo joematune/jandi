@@ -12,20 +12,20 @@ let sample = {
     2111070: { gender: "boy", sId: "2111070", sName: "chenchen" },
 }
 let first = [
-    'amazing',
-    'fantastic',
-    'stunning',
-    'tremendous',
-    'outstanding',
-    'wonderful',
-    'cheerful',
-    'delightful'
+    "NAME had an absolutely amazing class today and was " + 
+        "willing to learn for the entire duration of the lesson.",
+    "NAME was truly and without a doubt a fantastic student " + 
+        "and learning during today's lesson. "
 ];
 let second = [
-    ''
+    "PRO has a stunning knack for understanding the difficult concepts of the lesson at such a short amound of time and with such efficiency.",
+    "PRO has tremendous English skills, especially in th area of listening. PRO is consistently paying close attention to my pronunciation and the correct way to speak.",
+    "PRO has outstanding abilities and I am so pleased to say that they will continue to improve with this drive that NAME brings into the class."
 ];
 let third = [
-    ''
+    "NAME is doing wonderful work in class and PRO must keep up the great work.",
+    "POS cheerful attitude is bound to bring OBJ success in the future.",
+    "Keep up the delightful attitude towards learning becuase you're doing great, NAME!"
 ];
 function random(a) {
     return a[Math.floor(Math.random()*a.length)];
@@ -36,13 +36,15 @@ function commentGen(student) {
     sName = cap(sName);
     let PRO = gender == 'girl' ? 'she' : 'he';
     let POS = gender == 'girl' ? 'her' : 'his';
+    let OBJ = gender == 'girl' ? 'her' : 'him';
     let c = '';
-    c += `${sName} was ${random(first)}. PRO was focussed. `;
-    c += `I am never surprised by POS effort. `;
-    c += `${sName} listens when PRO is asked questions. `;
-    c += `POS skills are ${random(first)}. `
+    c += `${random(first)} `;
+    c += `${random(second)} `;
+    c += `${random(third)} `;
+    c = c.replace(/NAME/g, sName);
     c = c.replace(/PRO/g, PRO);
     c = c.replace(/POS/g, POS);
+    c = c.replace(/OBJ/g, OBJ);
     c = c.replace(/\. \w/g, s => s.toUpperCase());
     return console.log(c);
 }
