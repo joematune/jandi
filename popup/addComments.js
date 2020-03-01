@@ -49,7 +49,6 @@ if (document.querySelector('.memo-div')) {
             let split = nameAndId.split('@');
             students.push({ sName: split[0], sId: split[1]});
         })
-        console.log(students);
         return students;
     }
     // Array with current page students
@@ -64,13 +63,10 @@ if (document.querySelector('.memo-div')) {
         chrome.storage.sync.get((data) => {
             if (data.students.hasOwnProperty(stu[stuNumber].sId) && data.students[stu[stuNumber].sId].gender) {
                 // Found Student in DB
-                console.log(`Found ${stu[stuNumber].sName}. Is a ${data.students[stu[stuNumber].sId].gender}`);
-                // Add property for each student to the studentObjects
-                studentObjects[data.students[stu[stuNumber].sId]] = {
-                    gender: data.students[stu[stuNumber].sId].gender,
-                    sId: stu[stuNumber].sId,
-                    sName: stu[stuNumber].sName
-                };
+                console.log(`Found ${stu[stuNumber].sName} - student #${stuNumber}. Is a ${data.students[stu[stuNumber].sId].gender}`);
+                // Add gender property to stu for found students
+                stu[stuNumber].gender = data.students[stu[stuNumber].sId].gender;
+                commentGen(stu[stuNumber]);
             } else {
                 // Didn't find student. Add button to pick gender
                 insertButtons(stuNumber);
@@ -161,12 +157,14 @@ if (document.querySelector('.memo-div')) {
                     data.students[stu[stuNumber].sId].gender = stu[stuNumber].gender;
                     chrome.storage.sync.set({ "students": data.students }, () => {
                         console.log(`Added ${stu[stuNumber].gender} to student: ${stu[stuNumber].sName}`);
+                        commentGen(stu[stuNumber]);
                     });
                 } else {
                     // Add whole stu[stuNumber] into chrome.storage.sync students Object
                     data.students[stu[stuNumber].sId] = stu[stuNumber];
                     chrome.storage.sync.set({ "students": data.students }, () => {
                         console.log(`Added ${stu[stuNumber].sName} to DB as a ${stu[stuNumber].gender}`);
+                        commentGen(stu[stuNumber]);
                     });
                 }
             });
@@ -212,27 +210,12 @@ if (document.querySelector('.memo-div')) {
         }
     }
     insertNames();
-
-
-    // Insert student comment using commentGen.js
-    // sample student list
-    let sample = {
-        1299315: { gender: "boy", sId: "1299315", sName: "yinyin" },
-        2005289: { gender: "boy", sId: "2005289", sName: "Seven" },
-        2050619: { gender: "boy", sId: "2050619", sName: "Anan" },
-        2051041: { gender: "boy", sId: "2051041", sName: "Hanry" },
-        2056634: { gender: "boy", sId: "2056634", sName: "John" },
-        2057281: { gender: "girl", sId: "2057281", sName: "Nicole" },
-        2059492: { gender: "girl", sId: "2059492", sName: "Grace" },
-        2061728: { gender: "boy", sId: "2061728", sName: "Tuantuan" },
-        2086062: { gender: "boy", sId: "2086062", sName: "Lee" },
-        2111070: { gender: "boy", sId: "2111070", sName: "chenchen" },
-    }
+    // Student comment arrays
     let first = [
         "NAME had an absolutely amazing class today and was " +
         "willing to learn for the entire duration of the lesson.",
         "NAME was truly and without a doubt a fantastic student " +
-        "and learning during today's lesson. "
+        "in regards to learning during today's lesson. "
     ];
     let second = [
         "PRO has a stunning knack for understanding the difficult " +
@@ -253,12 +236,13 @@ if (document.querySelector('.memo-div')) {
         "Keep up the delightful attitude towards learning becuase " +
         "you're doing great, NAME!"
     ];
+    // Returns random item of an array
     function random(a) {
         return a[Math.floor(Math.random() * a.length)];
     }
     // Takes a student object and returns a string.
     function commentGen(student) {
-        let { gender, sId, sName } = student;
+        let { sName, sId, gender } = student;
         sName = cap(sName);
         let PRO = gender == 'girl' ? 'she' : 'he';
         let POS = gender == 'girl' ? 'her' : 'his';
@@ -274,11 +258,10 @@ if (document.querySelector('.memo-div')) {
         c = c.replace(/\. \w/g, s => s.toUpperCase());
         return console.log(c);
     }
+    // Capitalizes entire string
     function cap(s) {
         return s[0].toUpperCase() + s.slice(1);
     }
-    commentGen(sample['1299315']); // BOY
-    commentGen(sample['2057281']); // GIRL
 
 
 } else {
