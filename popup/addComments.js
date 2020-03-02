@@ -9,8 +9,6 @@ if (document.querySelector('.memo-div')) {
             overallPerformance: ''
         }
     };
-    // Add studentObjects for comment generation
-    let studentObjects = {};
     // Create and add <link rel="stylesheet"...>
     function addJandiStyle() {
         // Checks if gender button exists
@@ -64,9 +62,14 @@ if (document.querySelector('.memo-div')) {
             if (data.students.hasOwnProperty(stu[stuNumber].sId) && data.students[stu[stuNumber].sId].gender) {
                 // Found Student in DB
                 console.log(`Found ${stu[stuNumber].sName} - student #${stuNumber}. Is a ${data.students[stu[stuNumber].sId].gender}`);
-                // Add gender property to stu for found students
-                stu[stuNumber].gender = data.students[stu[stuNumber].sId].gender;
-                commentGen(stu[stuNumber]);
+                let textareaTextarea = [...document.querySelectorAll('textarea.textarea')];
+                textareaTextarea[stuNumber].addEventListener('keyup', e => {
+                    if (e.keyCode == 13) {
+                        // Add gender property to stu for found students
+                        stu[stuNumber].gender = data.students[stu[stuNumber].sId].gender;
+                        insertComment(stuNumber, commentGen(stu[stuNumber]));
+                    }
+                });
             } else {
                 // Didn't find student. Add button to pick gender
                 insertButtons(stuNumber);
@@ -109,7 +112,6 @@ if (document.querySelector('.memo-div')) {
     function getFirstTextarea() {
         // Insert start "1. Be sure to focus on..."
         let focusText;
-
         if (focusableArray[0].value == '') {
             focusText = '1. Be sure to focus on '
         } else {
@@ -157,14 +159,14 @@ if (document.querySelector('.memo-div')) {
                     data.students[stu[stuNumber].sId].gender = stu[stuNumber].gender;
                     chrome.storage.sync.set({ "students": data.students }, () => {
                         console.log(`Added ${stu[stuNumber].gender} to student: ${stu[stuNumber].sName}`);
-                        commentGen(stu[stuNumber]);
+                        insertComment(stuNumber, commentGen(stu[stuNumber]));
                     });
                 } else {
                     // Add whole stu[stuNumber] into chrome.storage.sync students Object
                     data.students[stu[stuNumber].sId] = stu[stuNumber];
                     chrome.storage.sync.set({ "students": data.students }, () => {
                         console.log(`Added ${stu[stuNumber].sName} to DB as a ${stu[stuNumber].gender}`);
-                        commentGen(stu[stuNumber]);
+                        insertComment(stuNumber, commentGen(stu[stuNumber]));
                     });
                 }
             });
@@ -215,13 +217,13 @@ if (document.querySelector('.memo-div')) {
         "NAME had an absolutely amazing class today and was " +
         "willing to learn for the entire duration of the lesson.",
         "NAME was truly and without a doubt a fantastic student " +
-        "in regards to learning during today's lesson. "
+        "in regards to learning during today's lesson."
     ];
     let second = [
         "PRO has a stunning knack for understanding the difficult " +
-        "concepts of the lesson at such a short amound of time " +
+        "concepts of the lesson within such a short amount of time " +
         "and with such efficiency.",
-        "PRO has tremendous English skills, especially in th area of " +
+        "PRO has tremendous English skills, especially in the area of " +
         "listening. PRO is consistently paying close attention to " +
         "my pronunciation and the correct way to speak.",
         "PRO has outstanding abilities and I am so pleased to say that " +
@@ -233,12 +235,14 @@ if (document.querySelector('.memo-div')) {
         "the great work.",
         "POS cheerful attitude is bound to bring OBJ success in the " +
         "future.",
-        "Keep up the delightful attitude towards learning becuase " +
+        "Keep up the delightful attitude towards learning because " +
         "you're doing great, NAME!"
     ];
-    // Returns random item of an array
+    // Returns random item of an array and logs number
     function random(a) {
-        return a[Math.floor(Math.random() * a.length)];
+        let rndm = Math.floor(Math.random() * a.length);
+        console.log(rndm);
+        return a[rndm];
     }
     // Takes a student object and returns a string.
     function commentGen(student) {
@@ -256,13 +260,16 @@ if (document.querySelector('.memo-div')) {
         c = c.replace(/POS/g, POS);
         c = c.replace(/OBJ/g, OBJ);
         c = c.replace(/\. \w/g, s => s.toUpperCase());
-        return console.log(c);
+        return c;
     }
     // Capitalizes entire string
     function cap(s) {
         return s[0].toUpperCase() + s.slice(1);
     }
-
+    function insertComment(stuNumber, comment) {
+        let perTextarea = [...document.querySelectorAll('textarea.per-textarea')][stuNumber];
+        perTextarea.value = comment;
+    }
 
 } else {
     console.log(`Not on memo page :(`);
