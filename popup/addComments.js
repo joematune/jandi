@@ -22,21 +22,18 @@ if (document.querySelector('.memo-div')) {
         // Add .jandi class to all buttons and text areas
         [...document.querySelectorAll('.el-button, textarea')].forEach(el => {
             el.classList.remove('el-button--primary');
-                el.classList.add('jandi');
+                if (![...el.classList].includes('el-button--mini')) {
+                    el.classList.add('jandi');
+                }
             }
         );
     }
     addJandiStyle();
     // Retrieve student names & IDs as an array of student objects
     function getNamesIds() {
-        let memoHeaders = [];
-        let memoHeadersCollection = document.querySelectorAll('.memo-header>span');
-        for (i = 0; i < memoHeadersCollection.length; i++) {
-            memoHeaders.push(memoHeadersCollection[i]);
-        }
         let headerText = [];
-        memoHeaders.forEach(memo => {
-            headerText.push(memo.innerText);
+        [...document.querySelectorAll('.stu-avatar')].forEach(avatar => {
+            headerText.push(avatar.parentNode.innerText);
         });
         let namesAndIds = [];
         headerText.forEach(header => {
@@ -215,28 +212,57 @@ if (document.querySelector('.memo-div')) {
     // Student comment arrays
     let first = [
         "NAME had an absolutely amazing class today and was " +
-        "willing to learn for the entire duration of the lesson.",
+            "willing to learn for the entire duration of the lesson.",
         "NAME was truly and without a doubt a fantastic student " +
-        "in regards to learning during today's lesson."
+            "in regards to learning during today's lesson.",
+        "NAME is on a streak of excellent behavior and a high " +
+            "level of performance during our classes.",
+        "NAME is working diligently during our classtime and I couldn't " +
+            "be prouder of POS efforts and strength.",
+        "NAME had so many opportunities to display POS skills and PRO " +
+            "took advantage of each and every chance.",
+        "NAME is a lovely student and I find time and time again that " +
+            "PRO is a highly intelligent student.",
+        "NAME gives POS best effort during all of our classes together " +
+            "and I couldn't be prouder to have OBJ in my learning " +
+            "environment."
     ];
     let second = [
         "PRO has a stunning knack for understanding the difficult " +
-        "concepts of the lesson within such a short amount of time " +
-        "and with such efficiency.",
+            "concepts of the lesson within such a short amount of time " +
+            "and with such efficiency.",
         "PRO has tremendous English skills, especially in the area of " +
-        "listening. PRO is consistently paying close attention to " +
-        "my pronunciation and the correct way to speak.",
+            "listening. PRO is consistently paying close attention to " +
+            "my pronunciation and the correct way to speak.",
         "PRO has outstanding abilities and I am so pleased to say that " +
-        "they will continue to improve with this drive that NAME " +
-        "brings into the class."
+            "they will continue to improve with this drive that NAME " +
+            "brings into the class.",
+        "PRO tried to listen carefully when I spoke about the slides and " +
+            "gave the most meaningful replies when I asked questions that " +
+            "required processing to answer.",
+        "Specifically, I have noticed that NAME is improving in the area " +
+            "of reading and that PRO is willing to attempt the " +
+            "pronunciation of words that certainly would have been too " +
+            "difficult when we first began together.",
+        "In particular, I have noticed that NAME's speaking skills are " +
+            "improving and that PRO is willing to pronounce difficult, " +
+            "and often times unfamiliar, words in the lesson."
     ];
     let third = [
         "NAME is doing wonderful work in class and PRO must keep up " +
-        "the great work.",
+            "the great work.",
         "POS cheerful attitude is bound to bring OBJ success in the " +
-        "future.",
+            "future.",
         "Keep up the delightful attitude towards learning because " +
-        "you're doing great, NAME!"
+            "you're doing great, NAME!",
+        "Keep on giving it your all in class because I can absolutely " +
+            "tell that you're making progress, NAME!",
+        "Keep on the track that you're on because you are truly making " +
+            "a difference in the quality of your performance, NAME!",
+        "I really am pleased with how well you're doing in class and " +
+            "wish for you to keep up the splendid work, NAME!",
+        "You're doing so tremendously in class and I can't begin to " +
+            "imagine how far you will grow as a student. Great job, NAME!"
     ];
     // Returns random item of an array and logs number
     function random(a) {
@@ -270,7 +296,6 @@ if (document.querySelector('.memo-div')) {
         let perTextarea = [...document.querySelectorAll('textarea.per-textarea')][stuNumber];
         perTextarea.value = comment;
     }
-
 } else {
     console.log(`Not on memo page :(`);
 }
