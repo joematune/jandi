@@ -1,7 +1,7 @@
 {
     "name": "jandi",
     "description": "Making Landi English less Chinese.",
-    "version": "0.0.01",
+    "version": "0.0.02",
     "permissions": [
         "activeTab",
         "declarativeContent",
