@@ -217,7 +217,7 @@ if (document.querySelector('.memo-div')) {
             "in regards to learning during today's lesson.",
         "NAME is on a streak of excellent behavior and a high " +
             "level of performance during our classes.",
-        "NAME is working diligently during our classtime and I couldn't " +
+        "NAME is working diligently during our class time and I couldn't " +
             "be prouder of POS efforts and strength.",
         "NAME had so many opportunities to display POS skills and PRO " +
             "took advantage of each and every chance.",
