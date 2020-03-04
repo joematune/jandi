@@ -5,7 +5,7 @@ function addStyle() {
     let styleLink = document.createElement('link');
     styleLink.setAttribute('rel', "stylesheet");
     styleLink.setAttribute('type', "text/css")
-    styleLink.setAttribute('href', "chrome-extension://aolldfofbamfbbmefjmcennookbpdnlg/backgroundColor.css");
+    styleLink.setAttribute('href', "chrome-extension://aolldfofbamfbbmefjmcennookbpdnlg/darkTheme.css");
     document.head.appendChild(styleLink);
 }
 addStyle();
@@ -19,7 +19,7 @@ function addLogo() {
     svgJandi.setAttributeNS(null, "width", "25px");
     svgJandi.setAttributeNS(null, "height", "25px");
     svgJandi.setAttributeNS(null, "viewBox", "0 0 25 25");
-    svgJandi.setAttribute("class", "jandi-logo");
+    svgJandi.setAttributeNS(null, "class", "jandi-logo");
     svgJandi.innerHTML = logo;
     let menu = document.querySelector('.menu');
     menu.insertBefore(svgJandi, menu.childNodes[0]);
