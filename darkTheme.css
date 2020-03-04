@@ -1,0 +1,83 @@
+body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
+    background-color: #121212       !important;
+    height: 45px                     !important;
+}
+.schedule-time-list .i-hot,.schedule-table-list .schedule-table-cont,.mainContent,
+.topBarContent,.menu-tab,.nav-right .nav-right-item,.menu-item,.date {
+    color: #efefef                  !important;
+}
+.schedule-container,.schedule-header-menu,.affix-week,.week-btn-bg,.week-btn {
+    background-color: #2E2E2E       !important;
+    border-color: #2e2e2e           !important;
+}
+.schedule .schedule-header .schedule-header-menu {
+    border-radius: 20px 20px 0 0      !important;
+}
+.schedule-gmt-title, .schedule-table-title,ol li.date-box .hour,.seconds,.user-name {
+    color: #FEC68A                  !important;
+}
+.schedule-table-list .class-tb-2 {
+    background-color: #FEC68A       !important;
+    color: #2b2b2b                  !important;
+}
+.schedule-footer {
+    height: 20px;
+    border: 2px solid #efefef;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+}
+.attendance-btn-disabled,.attendance-btn-active {
+    width: 140px                      !important;
+    background-image: none            !important;
+    color: #FEC68A                  !important;
+    text-transform: uppercase         !important;
+    background-color: #2e2e2e       !important;
+    border-radius: 20px               !important;
+    transition: all 0.1s ease-in      !important;
+}
+.attendance-btn-disabled:hover,.attendance-btn-active:hover,.navchilds {
+    background-color: #474747       !important;
+}
+.bg-grey {
+    background-color: #474747       !important;
+    border: 2px solid #2e2e2e       !important;
+    border-radius: 4px                !important;
+}
+.attendance-tooltip .ivu-tooltip-inner {
+    background-color: #FEC68A       !important;
+}
+.ivu-tooltip-arrow {
+    border-top-color: #FEC68A       !important;
+}
+.schedule-time-list,.schedule-table-list,affix-gmt,.schedule-gmt-title {
+    border-color: #2e2e2e           !important;
+}
+.schedule-container>div:first-child>:last-child,.schedule-container {
+    border-bottom-left-radius: 20px   !important;
+}
+.schedule-container>div:last-child>:last-child,.schedule-container {
+    border-bottom-right-radius: 20px  !important;
+}
+.arrow-btn {
+    background-color: #474747       !important;
+    border-radius: 50%                !important;
+    color: #fec68a                  !important;
+}
+.navchilds li,.user-name {
+    color: #fec68a                  !important;
+    font-family: sans-serif           !important;
+}
+.navchilds {
+    border-radius: 4px               !important;
+}
+.topBarContent .nav-right .navchilds,.menu-tab,div.mainContent,.menu-tab {
+    -webkit-box-shadow: none         !important;
+    box-shadow: none                 !important;
+    border: none                     !important;
+}
+.logo {
+    display: none                    !important;
+}
+.menu>svg {
+    margin-right: 20px               !important;
+}
