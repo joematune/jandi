@@ -9,11 +9,19 @@
         "unlimitedStorage"
     ],
     "web_accessible_resources": [
-        "jandi.css"
+        "jandi.css",
+        "backgroundColor.css"
     ],
     "background": {
         "page": "background.html"
     },
+    "content_scripts": [
+        {
+            "css": ["darkTheme.css"],
+            "js": ["addStyle.js"],
+            "matches": ["*://teacher.landi.com/*"]
+        }
+    ],
     "page_action": {
         "default_popup": "./popup/popup.html",
         "default_icon": {
