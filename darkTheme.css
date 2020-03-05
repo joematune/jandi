@@ -3,10 +3,16 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     height: 45px                      !important;
 }
 .schedule-time-list .i-hot,.schedule-table-list .schedule-table-cont,.mainContent,
-.topBarContent,.menu-tab,.nav-right .nav-right-item,.menu-item,.date {
+.topBarContent,.menu-tab,.nav-right .nav-right-item,.menu-item,.date,.schedule-time-list,
+.affix-gmt,.schedule-table-title {
     color: #efefef                  !important;
 }
-.schedule-container,.schedule-header-menu,.affix-week,.week-btn-bg,.week-btn {
+.nav {
+    border: none                      !important;
+}
+.schedule-container,.schedule-header-menu,.affix-week,.week-btn-bg,.week-btn,.schedule-time-list,
+.affix-gmt,.schedule-table-title,.schedule-table-list,.bg-grey,.left-schedule,.left-schedule>div,
+.right-class,.class-header,.class-body,.tabs-body,.ivu-spin,.ive-spin-large,.ivu-spin-fix {
     background-color: #2E2E2E       !important;
     border-color: #2e2e2e           !important;
 }
@@ -26,7 +32,7 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     border-top: none;
     border-radius: 0 0 20px 20px;
 }
-.attendance-btn-disabled,.attendance-btn-active {
+.attendance-btn-disabled,.attendance-btn-active,.attendance-btn-success {
     width: 140px                      !important;
     background-image: none            !important;
     color: #FEC68A                  !important;
@@ -43,8 +49,20 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     border: 2px solid #2e2e2e       !important;
     border-radius: 4px                !important;
 }
-.attendance-tooltip .ivu-tooltip-inner {
+.attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div {
     background-color: #FEC68A       !important;
+}
+.ivu-tooltip-inner {
+    padding: 0                        !important;
+}
+.ivu-tooltip-inner>div {
+    max-width: 250px                  !important;
+    min-height: 34px                  !important;
+    padding: 8px 12px                 !important;
+    color: #fff                     !important;
+    text-align: left                  !important;
+    text-decoration: none             !important;
+    border-radius: 4px                !important;
 }
 .ivu-tooltip-arrow {
     border-top-color: #FEC68A       !important;
@@ -52,10 +70,13 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 .schedule-time-list,.schedule-table-list,affix-gmt,.schedule-gmt-title {
     border-color: #2e2e2e           !important;
 }
-.schedule-container>div:first-child>:last-child,.schedule-container {
+.schedule-container>div:first-child>:last-child,.schedule-container,
+.left-schedule>div:first-child>:last-child,.left-schedule,
+.left-schedule>div:first-child,.ivu-spin,.ive-spin-large,.ivu-spin-fix {
     border-bottom-left-radius: 20px   !important;
 }
-.schedule-container>div:last-child>:last-child,.schedule-container {
+.schedule-container>div:last-child>:last-child,.schedule-container,
+.ivu-spin,.ive-spin-large,.ivu-spin-fix {
     border-bottom-right-radius: 20px  !important;
 }
 .arrow-btn {
@@ -80,4 +101,16 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 }
 .menu>svg {
     margin-right: 20px               !important;
+    min-width: 25px                  !important;
+}
+.icon-jinggao:before {
+    color: white                   !important;
+}
+.icon-bannerzuojiantou:before {
+    margin-right: 15px               !important;
+}
+.arrow-btn {
+    max-width: 35px                  !important;
+    max-height: 35px                 !important;
+    white-space: nowrap              !important;
 }
