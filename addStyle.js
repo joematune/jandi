@@ -35,3 +35,30 @@ var checkForMenu = setInterval(() => {
         clearInterval(checkForMenu);
     }
 }, 50);
+// Make link tag for favicon
+function makeIconLink() {
+    let ico = document.createElement('link');
+    ico.setAttribute('rel', 'shortcut icon');
+    ico.setAttribute('class', 'jandi-icon');
+    ico.setAttribute('href', chrome.extension.getURL('icons/jandiLogo.ico'));
+    return ico;
+}
+let iconLink = makeIconLink();
+// Check DOM to see if .jandi-icon link can be inserted
+var checkForIconLink = setInterval(() => {
+    if (document.querySelector('link').rel.includes('icon')) {
+        document.head.appendChild(iconLink);
+    }
+    if (document.querySelector('.jandi-icon') !== null) {
+        clearInterval(checkForIconLink);
+    }
+}, 50);
+var checkForTitle = setInterval(() => {
+    console.log('hey');
+    if (document.querySelector('title') !== null) {
+        document.querySelector('title').innerText = 'Jandi Teacher';
+    }
+    if (document.querySelector('title').innerText === 'Jandi Teacher') {
+        clearInterval(checkForTitle);
+    }
+}, 10)
