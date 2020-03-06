@@ -12,7 +12,8 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 }
 .schedule-container,.schedule-header-menu,.affix-week,.week-btn-bg,.week-btn,.schedule-time-list,
 .affix-gmt,.schedule-table-title,.schedule-table-list,.bg-grey,.left-schedule,.left-schedule>div,
-.right-class,.class-header,.class-body,.tabs-body,.ivu-spin,.ive-spin-large,.ivu-spin-fix {
+.right-class,.class-header,.class-body,.tabs-body,.ivu-spin,.ive-spin-large,.ivu-spin-fix,
+.day-schedule-container {
     background-color: #2E2E2E       !important;
     border-color: #2e2e2e           !important;
 }
@@ -27,10 +28,27 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     color: #2b2b2b                  !important;
 }
 .schedule-footer {
-    height: 20px;
-    border: 2px solid #efefef;
-    border-top: none;
-    border-radius: 0 0 20px 20px;
+    height: 20px                      !important;
+    border: 2px solid #efefef       !important;
+    border-top: none                  !important;
+    border-radius: 0 0 20px 20px      !important;
+}
+.a,a.active,ul.nav,.nav-tabs {
+    background-color: #2e2e2e       !important;
+    border-radius: 20px 20px 0 0      !important;
+}
+table.table {
+    border-radius: 0 20px 20px 20px   !important;
+}
+.a:hover {
+    color: #fec68a                  !important;
+}
+.container {
+    padding: 0                        !important;
+    padding-right: 20px               !important;
+}
+.day-schedule-container .right-class .class-body .nav .nav-tabs .a {
+    color: #efefef                  !important;
 }
 .attendance-btn-disabled,.attendance-btn-active,.attendance-btn-success {
     width: 140px                      !important;
@@ -41,7 +59,8 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     border-radius: 20px               !important;
     transition: all 0.1s ease-in      !important;
 }
-.attendance-btn-disabled:hover,.attendance-btn-active:hover,.navchilds {
+.attendance-btn-disabled:hover,.attendance-btn-active:hover,.navchilds,
+table.table {
     background-color: #474747       !important;
 }
 .bg-grey {
@@ -49,7 +68,7 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     border: 2px solid #2e2e2e       !important;
     border-radius: 4px                !important;
 }
-.attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div {
+.attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div,.ivu-spin-dot {
     background-color: #FEC68A       !important;
 }
 .ivu-tooltip-inner {
@@ -72,11 +91,13 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 }
 .schedule-container>div:first-child>:last-child,.schedule-container,
 .left-schedule>div:first-child>:last-child,.left-schedule,
-.left-schedule>div:first-child,.ivu-spin,.ive-spin-large,.ivu-spin-fix {
+.left-schedule>div:first-child,.ivu-spin,.ive-spin-large,.ivu-spin-fix,
+.day-schedule-container {
     border-bottom-left-radius: 20px   !important;
 }
 .schedule-container>div:last-child>:last-child,.schedule-container,
-.ivu-spin,.ive-spin-large,.ivu-spin-fix {
+.ivu-spin,.ive-spin-large,.ivu-spin-fix,.day-schedule-container,.day-schedule-container,
+.right-class,.class-body,.tabs-body {
     border-bottom-right-radius: 20px  !important;
 }
 .arrow-btn {
@@ -113,4 +134,7 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     max-width: 35px                  !important;
     max-height: 35px                 !important;
     white-space: nowrap              !important;
+}
+.schedule-table-list,.schedule-table-cont,.i-class-warnning-btn {
+    font-size: 16px                  !important;
 }
