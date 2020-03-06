@@ -1,7 +1,7 @@
 {
     "name": "jandi",
     "description": "Making Landi English less Chinese.",
-    "version": "0.0.02",
+    "version": "0.0.03",
     "permissions": [
         "activeTab",
         "declarativeContent",
@@ -10,7 +10,8 @@
     ],
     "web_accessible_resources": [
         "jandi.css",
-        "backgroundColor.css"
+        "backgroundColor.css",
+        "icons/jandiLogo.ico"
     ],
     "background": {
         "page": "background.html"
@@ -25,10 +26,10 @@
     "page_action": {
         "default_popup": "./popup/popup.html",
         "default_icon": {
-            "16": "./icons/megaman.png",
-            "32": "./icons/megaman.png",
-            "48": "./icons/megaman.png",
-            "128": "./icons/megaman.png"
+            "16": "./icons/jandiLogo.png",
+            "32": "./icons/jandiLogo.png",
+            "48": "./icons/jandiLogo.png",
+            "128": "./icons/jandiLogo.png"
         }
     },
     "commands": {
@@ -41,10 +42,10 @@
         }
     },
     "icons": {
-        "16": "./icons/megaman.png",
-        "32": "./icons/megaman.png",
-        "48": "./icons/megaman.png",
-        "128": "./icons/megaman.png"
+        "16": "./icons/jandiLogo_50.png",
+        "32": "./icons/jandiLogo_50.png",
+        "48": "./icons/jandiLogo_50.png",
+        "128": "./icons/jandiLogo_50.png"
     },
     "options_page": "./options/options.html",
     "manifest_version": 2
