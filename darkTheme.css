@@ -23,9 +23,19 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 .schedule-gmt-title, .schedule-table-title,ol li.date-box .hour,.seconds,.user-name {
     color: #FEC68A                  !important;
 }
+.tabs-body,.memo-div {
+    border: none                      !important;
+}
 .schedule-table-list .class-tb-2 {
     background-color: #FEC68A       !important;
     color: #2b2b2b                  !important;
+}
+a.active {
+    background-color: #474747       !important;
+    border: none                      !important;
+}
+ul.nav {
+    border-color: #474747           !important;
 }
 .schedule-footer {
     height: 20px                      !important;
@@ -33,11 +43,11 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     border-top: none                  !important;
     border-radius: 0 0 20px 20px      !important;
 }
-.a,a.active,ul.nav,.nav-tabs {
+.a,ul.nav,.nav-tabs {
     background-color: #2e2e2e       !important;
     border-radius: 20px 20px 0 0      !important;
 }
-table.table {
+table.table,.memo-div {
     border-radius: 0 20px 20px 20px   !important;
 }
 .a:hover {
