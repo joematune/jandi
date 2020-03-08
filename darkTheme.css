@@ -2,6 +2,9 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     background-color: #121212       !important;
     height: 45px                      !important;
 }
+body {
+    line-height: 1.2                  !important;
+}
 .schedule-time-list .i-hot,.schedule-table-list .schedule-table-cont,.mainContent,
 .topBarContent,.menu-tab,.nav-right .nav-right-item,.menu-item,.date,.schedule-time-list,
 .affix-gmt,.schedule-table-title {
@@ -33,6 +36,7 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 a.active {
     background-color: #474747       !important;
     border: none                      !important;
+    border-bottom: 2px solid #FEC68A!important;
 }
 ul.nav {
     border-color: #474747           !important;
@@ -47,8 +51,8 @@ ul.nav {
     background-color: #2e2e2e       !important;
     border-radius: 20px 20px 0 0      !important;
 }
-table.table,.memo-div {
-    border-radius: 0 20px 20px 20px   !important;
+table.table,.memo-div,.tabs-cont,.container,.tabs-body>div {
+    border-radius: 20px 20px 20px 20px   !important;
 }
 .a:hover {
     color: #fec68a                  !important;
@@ -70,7 +74,7 @@ table.table,.memo-div {
     transition: all 0.1s ease-in      !important;
 }
 .attendance-btn-disabled:hover,.attendance-btn-active:hover,.navchilds,
-table.table {
+table.table,.tabs-body>div {
     background-color: #474747       !important;
 }
 .bg-grey {
@@ -147,4 +151,22 @@ table.table {
 }
 .schedule-table-list,.schedule-table-cont,.i-class-warnning-btn {
     font-size: 16px                  !important;
+}
+.class-body {
+    margin-right: 20px               !important;
+}
+.stds {
+    background-color: #6E6E6E      !important;
+    border-radius: 20px              !important;
+    padding: 10px                    !important;
+}
+.stds>div {
+    color: #F7F7F7                 !important;
+}
+.stds-info {
+    background-color: transparent    !important;
+    border: none                     !important;
+}
+.stds-info-item {
+    color: inherit                   !important;
 }
