@@ -157,7 +157,7 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
     padding: 10px                    !important;
 }
 .stds>div {
-    color: #474747                 !important;
+    color: #c4c4c4                 !important;
 }
 .stds-info {
     background-color: transparent    !important;
@@ -176,7 +176,7 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
     border-color: #fec68a           !important;
 }
 .el-rate__icon,.el-icon-star-on,li.rate-group,.active-rate,
-.characters-num {
+.characters-num,.J-memo,.stds-info-item-accent,a {
     color: #fec68a                  !important;
 }
 textarea,.textarea,.per-textarea {
