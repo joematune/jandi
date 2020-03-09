@@ -3,11 +3,12 @@
     border-width: 2px;
 }
 .jandi:focus {
-    background-color: rgb(70, 70, 70);
-    border: 2px solid rgb(190, 185, 20);
+    border: 2px solid #fec68a;
+    background-color: #121212;
+    border-color: #fec68a;
     color: white;
 }
 .jandi:hover {
-    color: rgb(190, 185, 20);
-    border: 2px solid rgb(190, 185, 20);
+    color: #fec68a;
+    border: 2px solid #fec68a;
 }
