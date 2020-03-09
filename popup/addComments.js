@@ -127,6 +127,15 @@ if (document.querySelector('.memo-div')) {
         })
     }
     getFirstTextarea();
+    function clickStars() {
+        let stars = [...document.querySelectorAll('.el-rate__item')];
+        for (i = 0; i < stars.length; i++) {
+            if (i % 5 === 4) {
+                stars[i].dispatchEvent(new Event('click'));
+            }
+        }
+    }
+    clickStars();
     function firstSaveButton() {
         let saveButton = document.querySelector('.submit-btn');
         saveButton.addEventListener('keyup', (e) => {
