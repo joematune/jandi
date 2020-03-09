@@ -2,9 +2,6 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
     background-color: #121212       !important;
     height: 45px                      !important;
 }
-body {
-    line-height: 1.2                  !important;
-}
 .schedule-time-list .i-hot,.schedule-table-list .schedule-table-cont,.mainContent,
 .topBarContent,.menu-tab,.nav-right .nav-right-item,.menu-item,.date,.schedule-time-list,
 .affix-gmt,.schedule-table-title {
@@ -16,7 +13,7 @@ body {
 .schedule-container,.schedule-header-menu,.affix-week,.week-btn-bg,.week-btn,.schedule-time-list,
 .affix-gmt,.schedule-table-title,.schedule-table-list,.bg-grey,.left-schedule,.left-schedule>div,
 .right-class,.class-header,.class-body,.tabs-body,.ivu-spin,.ive-spin-large,.ivu-spin-fix,
-.day-schedule-container {
+.day-schedule-container,.memo-header {
     background-color: #2E2E2E       !important;
     border-color: #2e2e2e           !important;
 }
@@ -34,7 +31,6 @@ body {
     color: #2b2b2b                  !important;
 }
 a.active {
-    background-color: #474747       !important;
     border: none                      !important;
     border-bottom: 2px solid #FEC68A!important;
 }
@@ -51,7 +47,8 @@ ul.nav {
     background-color: #2e2e2e       !important;
     border-radius: 20px 20px 0 0      !important;
 }
-table.table,.memo-div,.tabs-cont,.container,.tabs-body>div {
+table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
+.addBtn {
     border-radius: 20px 20px 20px 20px   !important;
 }
 .a:hover {
@@ -73,8 +70,8 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div {
     border-radius: 20px               !important;
     transition: all 0.1s ease-in      !important;
 }
-.attendance-btn-disabled:hover,.attendance-btn-active:hover,.navchilds,
-table.table,.tabs-body>div {
+.attendance-btn-disabled:hover,.attendance-btn-active:hover,
+.addBtn {
     background-color: #474747       !important;
 }
 .bg-grey {
@@ -156,12 +153,11 @@ table.table,.tabs-body>div {
     margin-right: 20px               !important;
 }
 .stds {
-    background-color: #6E6E6E      !important;
     border-radius: 20px              !important;
     padding: 10px                    !important;
 }
 .stds>div {
-    color: #F7F7F7                 !important;
+    color: #474747                 !important;
 }
 .stds-info {
     background-color: transparent    !important;
@@ -169,4 +165,41 @@ table.table,.tabs-body>div {
 }
 .stds-info-item {
     color: inherit                   !important;
+}
+.el-button,.addBtn,.el-button--dashed {
+    background-color: #fec68a      !important;
+    color: #121212                 !important;
+    border-color: #121212          !important;
+}
+.el-button:hover,.addBtn:hover,.el-button--dashed:hover,
+.el-rate__icon,.el-icon-star-on,li.rate-group,.active-rate {
+    border-color: #fec68a           !important;
+}
+.el-rate__icon,.el-icon-star-on,li.rate-group,.active-rate,
+.characters-num {
+    color: #fec68a                  !important;
+}
+textarea,.textarea,.per-textarea {
+     background-color: #2e2e2e      !important;
+     border-radius: 4px               !important;
+     color: #c4c4c4                 !important;
+     border: 2px solid #474747      !important;
+}
+textarea,.textarea,.per-textarea {
+    border-color: #6e6e6e           !important;
+}
+textarea:focus,.textarea:focus,.per-textarea:focus,
+.el-button:focus,.addBtn:focus,.el-button--dashed:focus {
+    background-color: #121212       !important;
+    border-color: #fec68a           !important;
+    color: #efefef                  !important;
+}
+.tabs-body,.memo-header {
+    margin-top: 20px                  !important;
+}
+.stu-part>span,.stu-part>div {
+    display: inline-block             !important;
+}
+.stu-part>span {
+    margin-right: 4px                 !important
 }
