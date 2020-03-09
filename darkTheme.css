@@ -26,7 +26,7 @@ body,.mainContent,.topBarContent,.affix-week,.ivu-affix,.menu-tab,.menu {
 .tabs-body,.memo-div {
     border: none                      !important;
 }
-.schedule-table-list .class-tb-2 {
+.schedule-table-list .class-tb-2,.upload-select,.icon-tianjia:before {
     background-color: #FEC68A       !important;
     color: #2b2b2b                  !important;
 }
@@ -43,16 +43,20 @@ ul.nav {
     border-top: none                  !important;
     border-radius: 0 0 20px 20px      !important;
 }
-.a,ul.nav,.nav-tabs {
+.a,ul.nav,.nav-tabs,.itemWrap {
     background-color: #2e2e2e       !important;
     border-radius: 20px 20px 0 0      !important;
 }
 table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
-.addBtn {
-    border-radius: 20px 20px 20px 20px   !important;
+.addBtn,.upload-select {
+    border-radius: 20px               !important;
 }
-.a:hover {
+.a:hover,.ivu-form-item-error-tip,.ivu-form-item-required,
+.ivu-form-item-label:before {
     color: #fec68a                  !important;
+}
+.ivu-form-item-required,.ivu-form-item-label:before {
+    font-size: 18px                   !important;
 }
 .container {
     padding: 0                        !important;
@@ -79,7 +83,8 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
     border: 2px solid #2e2e2e       !important;
     border-radius: 4px                !important;
 }
-.attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div,.ivu-spin-dot {
+.attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div,.ivu-spin-dot,
+.upload-select {
     background-color: #FEC68A       !important;
 }
 .ivu-tooltip-inner {
@@ -156,7 +161,7 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
     border-radius: 20px              !important;
     padding: 10px                    !important;
 }
-.stds>div {
+.stds>div,.itemWrap {
     color: #c4c4c4                 !important;
 }
 .stds-info {
@@ -202,4 +207,7 @@ textarea:focus,.textarea:focus,.per-textarea:focus,
 }
 .stu-part>span {
     margin-right: 4px                 !important
+}
+p.total-p {
+    height: 10px                      !important;
 }
