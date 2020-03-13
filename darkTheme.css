@@ -184,7 +184,7 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
 .characters-num,.J-memo,.stds-info-item-accent,a {
     color: #fec68a                  !important;
 }
-textarea,.textarea,.per-textarea {
+textarea,.textarea,.per-textarea,.fb-wrap {
      background-color: #2e2e2e      !important;
      border-radius: 4px               !important;
      color: #c4c4c4                 !important;
