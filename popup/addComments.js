@@ -244,7 +244,7 @@ if (document.querySelector('.memo-div')) {
             "listening. PRO is consistently paying close attention to " +
             "my pronunciation and the correct way to speak.",
         "PRO has outstanding abilities and I am so pleased to say that " +
-            "they will continue to improve with this drive that NAME " +
+            "PRO will continue to improve with this drive that NAME " +
             "brings into the class.",
         "PRO tried to listen carefully when I spoke about the slides and " +
             "gave the most meaningful replies when I asked questions that " +
