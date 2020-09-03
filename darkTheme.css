@@ -87,7 +87,7 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
     border-radius: 4px                !important;
 }
 .attendance-tooltip .ivu-tooltip-inner,.ivu-tooltip-inner>div,.ivu-spin-dot,
-.upload-select,.dot {
+.upload-select,.dot,.stds-avatar-label {
     background-color: #FEC68A       !important;
 }
 .ivu-tooltip-inner {
@@ -186,6 +186,9 @@ table.table,.memo-div,.tabs-cont,.container,.tabs-body>div,.classFeedback,
 .el-rate__icon,.el-icon-star-on,li.rate-group,.active-rate,
 .characters-num,.J-memo,.stds-info-item-accent,a {
     color: #fec68a                  !important;
+}
+.stds-avatar-label {
+    color: #121212                  !important;
 }
 textarea,.textarea,.per-textarea,.fb-wrap {
      background-color: #2e2e2e      !important;
