@@ -11,7 +11,8 @@
     "web_accessible_resources": [
         "jandi.css",
         "backgroundColor.css",
-        "icons/jandiLogo.ico"
+        "icons/jandiLogo.ico",
+        "darkTheme.css"
     ],
     "background": {
         "page": "background.html"
